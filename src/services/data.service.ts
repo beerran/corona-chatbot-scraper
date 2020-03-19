@@ -1,7 +1,6 @@
 import { FirebaseApp } from '../firebase/firebase';
 import { BaseModel } from '../models/base-model';
 import { History, HistoryConverter } from '../models/history';
-import { Criteria } from '../common/criteria';
 
 export class DataService<T extends BaseModel> {
     private collection: FirebaseFirestore.CollectionReference<T>;

@@ -51,7 +51,7 @@ export class FohmService {
             const existing = await this.suggestionService.getAll();
             await this.checkForListUpdates(existing, suggestions, this.suggestionService);
         }
-        console.log(`suggestions scrape done, running again in ${process.env.POLLING_TIME_RISK}ms`);
+        console.log(`suggestions scrape done, running again in ${process.env.POLLING_TIME_SUGGESTIONS}ms`);
     }
 
        private async setupRegionScraper() {
@@ -60,7 +60,7 @@ export class FohmService {
             const existing = await this.regionService.getAll();
             await this.checkForListUpdates(existing, regions, this.regionService);
         }
-        console.log(`regions scrape done, running again in ${process.env.POLLING_TIME_RISK}ms`);
+        console.log(`regions scrape done, running again in ${process.env.POLLING_TIME_REGIONS}ms`);
     }
 
     private async setupRiskScraper() {
