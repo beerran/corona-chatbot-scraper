@@ -22,14 +22,16 @@ export module FohmScraper {
             const question = $(li).find('strong .accordion__item__title__text span').text();
             const answer = $(li).find('.textbody div p').text();
             const suggestion = {
-                index: _index,
+                index: _index || 0,
                 sourceId: 'FOHM',
                 question: question,
                 answer: answer,
                 status: 'New',
                 faqId: null
             };
-            suggestions = [...suggestions, (<any> suggestion) as Suggestion];
+            if (suggestion && suggestion.question && suggestion.answer) {
+                suggestions = [...suggestions, (<any> suggestion) as Suggestion];
+            }            
         })
         return [...suggestions];
     }
